@@ -1,0 +1,24 @@
+{
+  "name": "testes",
+  "version": "1.0.0",
+  "description": "https://www.luiztools.com.br/post/tdd-como-criar-integration-tests-em-node-js-com-jest/",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulotc1999/tdd-integracao-testes-node-jest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulotc1999/tdd-integracao-testes-node-jest/issues"
+  },
+  "homepage": "https://github.com/paulotc1999/tdd-integracao-testes-node-jest#readme"
+}
