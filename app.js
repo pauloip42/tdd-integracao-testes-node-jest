@@ -1,5 +1,5 @@
 //app.js
-const index = require('./index');
+const Service = require('./index');
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -11,7 +11,10 @@ app.get('/', (req, res) => res.json({ message: 'Funcionando!' }));
 app.get('/aplicarDesconto/:valor/:desconto', (req, res) => {
     const valor = parseInt(req.params.valor);
     const desconto = parseInt(req.params.desconto);
-    res.json({ valorDescontado: index.aplicarDesconto(valor, desconto) });
+    console.log(valor, desconto);
+    const teste = Service.aplicarDesconto(valor, desconto);
+    console.log('TESTE ====>', teste);
+    res.json({ valorDescontado: teste });
 })
 
 if (require.main === module) {
