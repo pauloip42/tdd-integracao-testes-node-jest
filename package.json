@@ -6,7 +6,9 @@
   "dependencies": {
     "express": "^4.17.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
   "scripts": {
     "test": "jest",
     "start": "node app"
