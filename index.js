@@ -3,9 +3,10 @@ function aplicarDescontoTest(){
  }
  
  console.log('A aplicação de desconto está funcionando? ');
- console.log(aplicarDescontoTest());
+ // console.log(aplicarDescontoTest());
 
  function aplicarDesconto(valor, desconto){
+    console.log(valor, desconto)
     try {
        if(desconto > valor) return 0;
        return valor - desconto;
@@ -19,7 +20,7 @@ function aplicarDescontoTest(){
     return aplicarDesconto(1,10) === 0;
    }
    
-   console.log('A aplicação de desconto grande está funcionando? '); console.log(aplicarDescontoGrandeTest());
+   //console.log('A aplicação de desconto grande está funcionando? '); console.log(aplicarDescontoGrandeTest());
    module.exports = {aplicarDesconto, aplicarDescontoGrandeTest};
 
  

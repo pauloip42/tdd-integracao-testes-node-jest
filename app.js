@@ -9,9 +9,20 @@ app.get('/', (req, res) => res.json({ message: 'Funcionando!' }));
 
 // GET /aplicarDesconto
 app.get('/aplicarDesconto/:valor/:desconto', (req, res) => {
-    const valor = parseInt(req.params.valor);
-    const desconto = parseInt(req.params.desconto);
-    console.log(valor, desconto);
+    valor = req.params.valor;
+    desconto = req.params.desconto;
+    
+    console.log("Antes", valor, desconto);
+    if(typeof(valor) != "number"){
+        valor = parseInt(req.params.valor);
+    }
+    if(typeof(desconto) != "number"){
+        desconto = parseInt(req.params.desconto);
+    }
+
+    // const valor = parseInt(req.params.valor);
+    // const desconto = parseInt(req.params.desconto);
+    console.log("Depois", valor, desconto);
     const teste = Service.aplicarDesconto(valor, desconto);
     console.log('TESTE ====>', teste);
     res.json({ valorDescontado: teste });

@@ -1,3 +1,7 @@
+Criar situações onde o código quebraria
+Construir testes para essas situações
+Escrever as funções para tratar as situações de forma adequada
+
 # tdd-integracao-testes-node-jest
 
 https://www.luiztools.com.br/post/tdd-como-criar-integration-tests-em-node-js-com-jest/
@@ -9,7 +13,7 @@ Um teste acaba testando internamente diversas funções e (muitas vezes) depende
 
 Geralmente são mais complicados de automatizar
 
-Mocking
+Pesquisar: Mocking
 
 ### Instalação e configuração do Jest
 
@@ -22,8 +26,9 @@ Para instalar a dependência do Jest, digite o seguinte comando:
 
 O Jest está instalado localmente, por isso devemos usar o comando ``` npx jest --init ``` para inicializar as configurações do Jest.
 
-Algumas perguntas irão aparecer no terminal, escolha as seguintes opções:
+Algumas perguntas irão aparecer no terminal, escolha as seguintes opções:Isso organiza melhor na hora de exibir o relatório dos testes e também permite que você crie beforeAll/beforeEach/afterAll/afterEach dentro do callback do describe, o que organiza melhor as configurações prévias e pós os testes.
 
+Dica 6: alguns testes são bem chatos de fazer por serem complexos ou mesmo lentos. Para estes casos, a técnica de mocking pode ajudar b
 - TypeScript: não
 - Ambiente de teste: node
 - Coverage reports: yes
@@ -38,4 +43,38 @@ Supertest é um módulo que forja requisições visando testar webservers em Nod
 #### Instalando dependência de desenvolvimento do Supertest
 
 ``` npm i -D supertest ```
+
+#### Executando teste
+``` npm test ```
+
+# JEST
+https://jestjs.io/pt-BR/docs/getting-started
+
+## Instalação:
+
+Instalação usando yarn:
+``` yarn add --dev jest ```
+
+Instalação usando npm:
+
+``` npm install --save-dev jest ```
+
+## Criando e executando o teste
+
+Crie um arquivo "arquivo.js" (como o "app.js" nesse exemplo) e coloque suas funções ou requisições.
+
+Após isso, crie um arquivo "arquivo.test.js", esse será o arquivo de testes
+
+Adicione um script "test" com o valor "jest" em seu package.json
+
+Para executar o teste, execute o comando ``` yarn test ``` ou ``` npm run test ``` e o Jest irá imprimir uma mensagem
+
+## Configuração
+
+### Gerando um arquivo de configuração básico:
+
+Execute o comando ``` jest --init ``` e responda algumas perguntas.
+O Jest irá criar um arquivo básico de configuração.
+
+## MATCHERS
 
