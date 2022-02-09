@@ -78,3 +78,36 @@ O Jest irá criar um arquivo básico de configuração.
 
 ## MATCHERS
 
+Permite testar valores de maneiras diferentes
+
+``` expect(expressão).toBe(valor); ``` toBe: testa a igualdade exata
+
+``` expect(dados).toEqual(valores) ``` toEqual: checa o valor de um objeto
+
+Também podemos testar o oposto de "matchers":
+
+``` expect(a + b).not.toBe(0); ```
+
+### Verdade
+
+https://jestjs.io/pt-BR/docs/using-matchers#verdade
+
+Pode ser necessário (ou não) distinguir entre ``` undefined ```, ``` null ``` e ``` false ```. Jest contém auxiliares que permitem você ser explícito sobre o que quer.
+
+``` toBeNull ```
+``` toBeUndefined ```
+``` toBeDefined ```
+``` toBeTruthy ```
+``` toBeFalsy ```
+
+### Números
+
+https://jestjs.io/pt-BR/docs/using-matchers#n%C3%BAmeros
+
+### Strings
+
+https://jestjs.io/pt-BR/docs/using-matchers#strings
+
+### Exceções
+
+https://jestjs.io/pt-BR/docs/using-matchers#exce%C3%A7%C3%B5es
