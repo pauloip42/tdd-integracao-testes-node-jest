@@ -111,3 +111,8 @@ https://jestjs.io/pt-BR/docs/using-matchers#strings
 ### Exceções
 
 https://jestjs.io/pt-BR/docs/using-matchers#exce%C3%A7%C3%B5es
+
+### Testando código assíncrono
+
+https://jestjs.io/pt-BR/docs/asynchronous
+
