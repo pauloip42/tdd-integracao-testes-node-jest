@@ -116,3 +116,76 @@ https://jestjs.io/pt-BR/docs/using-matchers#exce%C3%A7%C3%B5es
 
 https://jestjs.io/pt-BR/docs/asynchronous
 
+### Configuração e desmontagem
+
+https://jestjs.io/pt-BR/docs/setup-teardown
+
+#### Repetindo a configuração para vários testes
+
+- beforeEach();
+- afterEach();
+
+beforeEach executa as ações antes de os testes começarem
+
+afterEach executa as ações após a execução dos testes
+
+```
+beforeEach(() => {
+  initializeCityDatabase();
+});
+
+afterEach(() => {
+  clearCityDatabase();
+});
+
+test('city database has Vienna', () => {
+  expect(isCity('Vienna')).toBeTruthy();
+});
+
+test('city database has San Juan', () => {
+  expect(isCity('San Juan')).toBeTruthy();
+});
+
+```
+
+#### Configuração única
+
+- beforeAll();
+- afterAll();
+
+#### Escopo
+
+Testes podem ser agrupados em um bloco ``` describe ```. Quando beforeAll e afterAll estão dentro de um "describe", eles se aplicam apennas aos testes dentro do bloco.
+
+```
+// Applies to all tests in this file
+beforeEach(() => {
+  return initializeCityDatabase();
+});
+
+test('city database has Vienna', () => {
+  expect(isCity('Vienna')).toBeTruthy();
+});
+
+test('city database has San Juan', () => {
+  expect(isCity('San Juan')).toBeTruthy();
+});
+
+describe('matching cities to foods', () => {
+  // Applies only to tests in this describe block
+  beforeEach(() => {
+    return initializeFoodDatabase();
+  });
+
+  test('Vienna <3 veal', () => {
+    expect(isValidCityFoodPair('Vienna', 'Wiener Schnitzel')).toBe(true);
+  });
+
+  test('San Juan <3 plantains', () => {
+    expect(isValidCityFoodPair('San Juan', 'Mofongo')).toBe(true);
+  });
+});
+
+
+
+```
